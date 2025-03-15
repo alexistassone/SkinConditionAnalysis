@@ -28,16 +28,3 @@ def load_and_preprocess_data():
     test_data = test_data.prefetch(buffer_size=AUTOTUNE)
 
     return train_data, test_data
-
-def main():
-    # Print class names
-    class_names = train_data.class_names
-    print("Class Names :", class_names)
-
-    # Check batch shapes
-    for images, labels in train_data.take(1): # Check one batch
-        print("Batch Shape:", images.shape)
-        print("Label Shape:", labels.shape)
-
-if __name__ == "__main__":
-    main()
