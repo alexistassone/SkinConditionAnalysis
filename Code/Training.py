@@ -33,3 +33,14 @@ history = model.fit(
     epochs=10,
     validation_data=test_data,
 )
+
+# Evaluate the model
+test_loss, test_accuracy = model.evaluate(test_data)
+
+# Save the model
+model_dir = os.path.join(os.path.dirname(__file__), '..', 'Model')
+model.save(model_dir)
+
+def main():
+    print(f'Test loss: {test_loss}, Test accuracy: {test_accuracy}')
+    print("Model saved successfully.")
